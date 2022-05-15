@@ -1,4 +1,22 @@
-var socket = io();
+var socket = io.connect('/app', {
+    query : {
+        AuthorizationCookie: getCookie('Authorization')
+    }
+});
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) {
+            return c.substring(nameEQ.length, c.length);
+        }
+    }
+    return null;
+}
+
 var playerAnswered = false;
 var correct = false;
 var name;
@@ -14,6 +32,10 @@ socket.on('connect', function() {
     document.getElementById('answer2').style.visibility = "visible";
     document.getElementById('answer3').style.visibility = "visible";
     document.getElementById('answer4').style.visibility = "visible";
+});
+
+socket.on('connect_error', err => {
+    window.location.href = 'signin.html';
 });
 
 socket.on('noGameFound', function(){

@@ -32,7 +32,7 @@ body {
     font-size: 50px;
     color: white;
 }
-#name{
+#username-input, #name{
     width: 50%;
     padding: 12px 0px;
     margin: 8px 0;
@@ -45,7 +45,7 @@ body {
     font-size: 20px;
     text-align: center;
 }
-#pin{
+#password-input, #pin{
     width: 50%;
     padding: 12px 0px;
     margin: 8px 0;
@@ -72,7 +72,7 @@ body {
 #host:hover{
     text-decoration:underline;
 }
-#joinButton{
+#sign-in-button, #sign-up-button, #joinButton{
     width: 50%;
     background-color: #4CAF50;
     color: white;

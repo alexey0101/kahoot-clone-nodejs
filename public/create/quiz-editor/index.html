@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Editor | KahootClone</title>
+        <link rel = "stylesheet" href = "../../css/quizCreator.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    </head>
+    <body>
+        <button id="logout" type="button">Logout</button><br><br>
+        <h1 id = "title">Kahoot Quiz Editor Studio</h1>
+        
+        <div class="form-field">
+            <label id = "quizTitle">Quiz Title</label>
+            <input id = "name" type = "text" name="name" autofocus/>
+        </div>
+        <br>
+        <br>
+        <div id = "allQuestions">
+        </div>
+        <br>
+        <button onclick = "addQuestion()">Add another question</button>
+        
+        <br>
+        <br>
+        
+        <div class="form-field">
+            <button onclick = "updateDatabase()">Save Quiz</button>
+        </div>
+        
+        <br>
+        
+        <button onclick = 'cancelQuiz()'>Don't save and return to quiz selection</button>
+        
+        <script src = "../../socket.io/socket.io.js"></script>
+        <script src = "../../js/libs/jqueryLibrary.js"></script>
+        <script src = "../../js/libs/deparam.js"></script>
+        <script src = "../../js/quizEditor.js"></script>
+        <script src = "../../js/logout.js"></script>
+    </body>
+</html>

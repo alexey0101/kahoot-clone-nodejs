@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign In | KahootClone</title>
+        <link rel = "stylesheet" href = "css/index.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 id = "title">Sign In</h1>
+        <form>
+                <div class="form-field">
+                    <label id = "label">Username</label>
+                    <input id = "username-input" type = "text" name="username" autofocus/>
+                </div>
+                <br>
+                <div class="form-field">
+                    <label id = "label">Passsword</label>
+                    <input id = "password-input" type="password" name="password"/>
+                </div>
+                <br>
+                <div class="form-field">
+                    <button type="button" id = "sign-in-button">Sign In</button>
+                </div>
+        </form>
+        <br/>
+        <center><a href = "signup.html" id = "host">Didn't have an account? Sign up</a></center>
+    </body>
+
+    <script src = "../socket.io/socket.io.js"></script>
+    <script src="js/sign.js"></script>
+</html>
