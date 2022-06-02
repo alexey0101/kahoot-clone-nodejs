@@ -45,7 +45,7 @@ ioSign.on('connection', async (socket) => {
             const token = await user.generateAuthToken();
             socket.emit('signin_success', token, 7);
         } catch (error) {
-            socket.emit('signup_failed', 'Неверные данные для входа!');
+            socket.emit('signup_failed', 'Wrong authorization data!');
         }
     });
 
@@ -57,7 +57,7 @@ ioSign.on('connection', async (socket) => {
             socket.emit('signup_success');
         } catch (e) {
             if (e.code === 11000) {
-                socket.emit('signup_failed', 'Пользователь с таким именем уже существует!');
+                socket.emit('signup_failed', 'User with a given name already exists!');
             } else {
                 socket.emit('signup_failed', e._message);
             }
